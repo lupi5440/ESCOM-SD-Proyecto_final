@@ -15,3 +15,12 @@
 
 * Metodo de la API: <https://livecoinwatch.github.io/lcw-api-docs/?java#coinslist>
 * Las monedas se categorizan por estandar FIAT : <https://es.wikipedia.org/wiki/ISO_4217> <https://es.iban.com/currency-codes>
+
+### Metodo para obtencion de las criptomonedas
+
+* Metodo de la API: <https://livecoinwatch.github.io/lcw-api-docs/#platformsall>
+* Obtener todo el dato historico de una criptomoneda en concreto: <https://livecoinwatch.github.io/lcw-api-docs/#overviewhistory>
+
+### Grafica de las criptomonedas
+
+* Se va a estar ocupando la libreria de chartjs que es para javascript <https://www.chartjs.org/> ,hay que investigar bien como se usa y si esta bien con esta o vemos mas opciones con el backend para que regrese un blop y con eso se use en el frontend.
