@@ -1,0 +1,87 @@
+/* Estilos Generales del Cuerpo y Fuentes */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa; /* Un gris muy claro para el fondo */
+}
+
+/* Estilo de la Marca en la Barra de Navegación */
+.navbar-brand {
+  font-weight: 700;
+}
+
+/* Estilo General para las Tarjetas (Cards) */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto Hover para las Tarjetas */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado de las Tarjetas */
+.card-header {
+  background-color: #0d6efd; /* Azul principal de Bootstrap */
+  color: white;
+  font-weight: 500;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Iconos de las Criptomonedas */
+.crypto-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+/* Colores para la Variación de Precios */
+.price-up {
+  color: #198754; /* Verde Bootstrap (éxito) */
+}
+.price-down {
+  color: #dc3545; /* Rojo Bootstrap (peligro) */
+}
+
+/* Contenedor para los Gráficos (Placeholder) */
+.graph-placeholder {
+  min-height: 300px;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Asegura que la imagen del gráfico sea responsiva */
+.graph-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Animación de Carga (Loader) */
+.loader {
+  border: 5px solid #f3f3f3; /* Gris claro */
+  border-top: 5px solid #0d6efd; /* Azul */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Definición de la Animación 'spin' */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
