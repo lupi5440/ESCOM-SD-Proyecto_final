@@ -6,51 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoTracker Web</title>
 
-    <!-- Bootstrap 5.3.3 CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="css/Fuentes_google.css" rel="stylesheet">
 
-    <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
 
-    <!-- Barra de Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">CryptoTracker Web</a>
         </div>
     </nav>
 
-    <!-- Contenido Principal -->
     <div class="container mt-4">
 
-        <!-- Sección 1: Precio Actual -->
         <div class="card mb-4">
             <div class="card-header">
-                Precio Actual (Top 10 Criptomonedas)
+                Precios de Mercado de Criptomonedas
             </div>
             <div class="card-body">
-                <p class="card-text">Precios actualizados del mercado. Se refrescan automáticamente cada minuto.</p>
+                <p class="card-text">Utilice los filtros para personalizar la lista de criptomonedas. Los precios se
+                    refrescan automáticamente.</p>
+
+                <div class="bg-light p-3 rounded mb-4 border">
+                    <div class="row g-3 align-items-end">
+
+                        <div class="col-md-4 col-lg-2">
+                            <label for="fiat-currency-select" class="form-label">Moneda</label>
+                            <select id="fiat-currency-select" class="form-select">
+                                <option value="USD" selected>USD</option>
+                                <option value="MXN">MXN</option>
+                                <option value="EUR">EUR</option>
+                                <option value="JPY">JPY</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-lg-2">
+                            <label for="sort-by-select" class="form-label">Ordenar por</label>
+                            <select id="sort-by-select" class="form-select">
+                                <option value="rank" selected>Rank</option>
+                                <option value="price">Precio</option>
+                                <option value="volume">Volumen</option>
+                                <option value="code">Código</option>
+                                <option value="name">Nombre</option>
+                                <option value="age">Antigüedad</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-lg-2">
+                            <label for="sort-order-select" class="form-label">Dirección</label>
+                            <select id="sort-order-select" class="form-select">
+                                <option value="ascending">Ascendente</option>
+                                <option value="descending" selected>Descendente</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-lg-2">
+                            <label for="limit-input" class="form-label">Resultados</label>
+                            <input type="number" class="form-control" id="limit-input" value="10" min="1" max="100">
+                        </div>
+
+                        <div class="col-md-4 col-lg-2">
+                            <label for="offset-input" class="form-label">Offset</label>
+                            <input type="number" class="form-control" id="offset-input" value="0" min="0" max="99">
+                        </div>
+
+                        <div class="col-md-4 col-lg-2 d-flex align-items-center">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="meta-checkbox">
+                                <label class="form-check-label" for="meta-checkbox">Metadatos</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-2">
+                            <button id="btn-update-list" class="btn btn-primary w-100">Actualizar</button>
+                        </div>
+
+                    </div>
+                </div>
                 <div id="latest-prices-container" class="list-group">
-                    <!-- Loader inicial -->
                     <div class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
                         <div class="loader"></div>
                     </div>
                 </div>
+
+                <div id="pagination-controls" class="d-flex justify-content-between mt-3">
+                    <button id="btn-prev-page" class="btn btn-secondary" disabled>Anterior</button>
+                    <span id="page-indicator" class="align-self-center">Página 1</span>
+                    <button id="btn-next-page" class="btn btn-secondary">Siguiente</button>
+                </div>
             </div>
         </div>
 
-        <!-- Sección 2: Funcionalidades con Gráficos -->
         <h2 class="mb-3">Análisis y Visualización</h2>
         <div class="row">
-            <!-- Funcionalidad: Gráfico Histórico (Una cripto) -->
             <div class="col-lg-6 mb-4">
                 <div class="card h-100">
                     <div class="card-header">Gráfico de Variación de Precio</div>
@@ -75,7 +130,6 @@
                 </div>
             </div>
 
-            <!-- Funcionalidad: Regresión Lineal -->
             <div class="col-lg-6 mb-4">
                 <div class="card h-100">
                     <div class="card-header">Análisis de Regresión Lineal</div>
@@ -108,16 +162,14 @@
         </div>
     </div>
 
-    <!-- Pie de Página -->
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2025 Crypto Tracker Web - Proyecto Final de Sistemas Distribuidos
         </div>
     </footer>
 
-    <!-- Bootstrap 5.3.3 JS Bundle -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- APPI REST.js -->
+    <script src="js/Verificacion_peticiones.js"></script>
     <script src="js/app.js"></script>
 
 </body>
